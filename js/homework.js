@@ -10,13 +10,16 @@ function createAdder(x){
     return addEm
 };
 
-
+console.log(createAdder(7)(8))
+console.log("======")
 const addEight = createAdder(8);
 console.log(addEight(10)); // 18
 console.log(addEight(17)); // 25
 console.log(addEight(50)); // 58
 console.log(addEight(100)); // 108
 console.log(addEight(92)); // 100
+
+console.log("======")
 
 const addThree = createAdder(3);
 console.log(addThree(10)); // 13
@@ -56,7 +59,7 @@ function getMovieInfo(movieName){
 async function printMovieInfo(movieName){
     try{
         let movie = await getMovieInfo(movieName)
-        console.log(`${movieName} directed by ${movie.director}. A story of ${movie.description} that runs for ${movie.runtime}`)
+        console.log(`${movie.title} directed by ${movie.director}. A story of ${movie.description} that runs for ${movie.runtime} minutes.`)
     } catch(err) {
         console.warn(err)
     }
